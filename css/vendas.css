@@ -1,0 +1,188 @@
+/* Cards de Resumo de Vendas */
+.vendas-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Lista / Cards de Vendas */
+.vendas-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.venda-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 1.35rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    transition: var(--transition-smooth);
+}
+
+.venda-card:hover {
+    border-color: var(--border-gold);
+    transform: translateY(-2px);
+}
+
+.venda-main-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.venda-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.venda-title-row h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--text-primary);
+}
+
+.canal-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 6px;
+    background: rgba(212, 154, 69, 0.12);
+    color: var(--gold-light);
+    border: 1px solid rgba(212, 154, 69, 0.3);
+}
+
+.pag-badge {
+    font-size: 0.72rem;
+    padding: 3px 9px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+}
+
+.venda-sub-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+}
+
+.venda-sub-info span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.venda-values-box {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.venda-price-group {
+    text-align: right;
+}
+
+.venda-price-group span {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--status-online);
+}
+
+.venda-price-group strong {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    color: var(--gold-light);
+}
+
+/* Modal de Nova Venda (Mais largo para acomodar importação e filamentos) */
+.modal-venda-box {
+    max-width: 580px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.import-quote-bar {
+    background: rgba(212, 154, 69, 0.08);
+    border: 1px dashed var(--border-gold);
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.import-quote-bar label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.import-quote-bar select {
+    background: var(--bg-main);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+.stock-deduct-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    margin-bottom: 0.75rem;
+}
+
+.checkbox-row input[type="checkbox"] {
+    accent-color: var(--gold-primary);
+    width: 16px;
+    height: 16px;
+}
+
+@media (max-width: 768px) {
+    .vendas-kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .venda-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .venda-values-box {
+        width: 100%;
+        justify-content: space-between;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--border-subtle);
+    }
+
+    .venda-price-group {
+        text-align: left;
+    }
+}

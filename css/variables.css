@@ -1,0 +1,51 @@
+:root {
+    /* Cores de Fundo (Dark Theme Profundo) */
+    --bg-main: #09090b;
+    --bg-surface: #121216;
+    --bg-surface-hover: #1a1a20;
+    --bg-glass: rgba(18, 18, 22, 0.75);
+
+    /* Identidade Visual URUZ (Bronze / Ouro / Âmbar) */
+    --gold-primary: #d49a45;
+    --gold-light: #f3c478;
+    --copper-accent: #c85a17;
+    --gold-glow: rgba(212, 154, 69, 0.22);
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --border-gold: rgba(212, 154, 69, 0.45);
+
+    /* Textos */
+    --text-primary: #f4f4f6;
+    --text-secondary: #9a9aa6;
+    --text-muted: #5e5e6a;
+
+    /* Status */
+    --status-online: #10b981;
+    --status-offline: #ef4444;
+    --status-warning: #f59e0b;
+
+    /* Tipografia */
+    --font-display: 'Rajdhani', sans-serif;
+    --font-sans: 'Inter', sans-serif;
+
+    /* Espaçamentos e Bordas */
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URUZ 3D | Sistema de Gestão</title>
+    
+    <!-- Google Fonts: Rajdhani (Títulos/Tech) e Inter (Leitura/Dados) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones (Phosphor Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Estilos Modulares -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/estoque.css">
+    <link rel="stylesheet" href="css/orcamentos.css">
+    <link rel="stylesheet" href="css/caixa.css">
+    <link rel="stylesheet" href="css/vendas.css">
+    <link rel="stylesheet" href="css/financeiro.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+    
+</head>
+<body>
+
+    <!-- Efeito de Luz de Fundo -->
+    <div class="bg-glow"></div>
+
+    <!-- Barra Superior Minimalista (Status do Servidor) -->
+    <header class="top-bar">
+        <div class="system-version">URUZ.OS // v1.0</div>
+        <div class="connection-badge" id="supabase-status">
+            <span class="status-dot"></span>
+            <span class="status-text">Conectando ao Supabase...</span>
+        </div>
+    </header>
+
+    <!-- Container Principal Centralizado -->
+    <main class="main-container">
+        
+        <!-- Seção da Logo Centralizada Acima dos Menus -->
+        <section class="hero-brand animate-fade-down">
+            <div class="logo-wrapper">
+                <img src="assets/img/logo-uruz.png" alt="Logo URUZ" class="brand-logo" onerror="this.src='https://placehold.co/220x220/141418/d49a45?text=URUZ'">
+            </div>
+            <h1 class="brand-title">URUZ <span>PRINTING LAB</span></h1>
+            <p class="brand-subtitle">Painel Central de Controle e Produção 3D</p>
+        </section>
+
+        <!-- Grid de Menus de Navegação -->
+        <nav class="menu-grid">
+            
+            <!-- Card 1: Orçamentos e Calculadora -->
+            <a href="#orcamentos" class="menu-card animate-card" style="--delay: 0.1s" data-module="orcamentos">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <i class="ph-duotone ph-calculator"></i>
+                </div>
+                <div class="card-info">
+                    <h2>Calculadora & Orçamentos</h2>
+                    <p>Cálculo de tempo, peso de filamento, energia e margem de lucro</p>
+                </div>
+                <div class="card-arrow">
+                    <i class="ph-bold ph-arrow-up-right"></i>
+                </div>
+            </a>
+
+            <!-- Card 2: Caixa Atual -->
+            <a href="#caixa" class="menu-card animate-card" style="--delay: 0.2s" data-module="caixa">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <i class="ph-duotone ph-wallet"></i>
+                </div>
+                <div class="card-info">
+                    <h2>Caixa Atual</h2>
+                    <p>Saldo real, contas a pagar pendentes e acerto de reembolso dos sócios</p>
+                </div>
+                <div class="card-arrow">
+                    <i class="ph-bold ph-arrow-up-right"></i>
+                </div>
+            </a>
+
+            <!-- Card 3: Estoque de Insumos -->
+            <a href="#estoque" class="menu-card animate-card" style="--delay: 0.3s" data-module="estoque">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <i class="ph-duotone ph-stack"></i>
+                </div>
+                <div class="card-info">
+                    <h2>Estoque de Insumos</h2>
+                    <p>Controle de filamentos (PLA, PETG, ABS), resinas, cores e custos/KG</p>
+                </div>
+                <div class="card-arrow">
+                    <i class="ph-bold ph-arrow-up-right"></i>
+                </div>
+            </a>
+
+            <!-- Card 4: Vendas ePedidos -->
+            <a href="#vendas" class="menu-card animate-card" style="--delay: 0.4s" data-module="vendas">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <i class="ph-duotone ph-shopping-cart"></i>
+                </div>
+                <div class="card-info">
+                    <h2>Registro de Vendas</h2>
+                    <p>Histórico de clientes, pedidos entregues e canais de venda</p>
+                </div>
+                <div class="card-arrow">
+                    <i class="ph-bold ph-arrow-up-right"></i>
+                </div>
+            </a>
+
+            <!-- Card 5: Financeiro -->
+            <a href="#financeiro" class="menu-card animate-card" style="--delay: 0.5s" data-module="financeiro">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <i class="ph-duotone ph-chart-line-up"></i>
+                </div>
+                <div class="card-info">
+                    <h2>Fluxo Financeiro</h2>
+                    <p>Entradas, saídas, contas a pagar e relatórios de faturamento</p>
+                </div>
+                <div class="card-arrow">
+                    <i class="ph-bold ph-arrow-up-right"></i>
+                </div>
+            </a>
+
+            <!-- Card 6: Catálogo / Modelos -->
+            <a href="#catalogo" class="menu-card animate-card" style="--delay: 0.6s" data-module="catalogo">
+                <div class="card-glow"></div>
+                <div class="card-icon">
+                    <i class="ph-duotone ph-folder-open"></i>
+                </div>
+                <div class="card-info">
+                    <h2>Catálogo de Modelos</h2>
+                    <p>Biblioteca de arquivos STL/3MF, parâmetros de fatiamento e fotos</p>
+                </div>
+                <div class="card-arrow">
+                    <i class="ph-bold ph-arrow-up-right"></i>
+                </div>
+            </a>
+
+        </nav>
+    </main>
+
+    <!-- Container Dinâmico para futuras telas dos módulos -->
+    <div id="module-viewer" class="module-viewer hidden"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- SDK do Supabase via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Biblioteca de Gráficos (Chart.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Script Principal Modular -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
